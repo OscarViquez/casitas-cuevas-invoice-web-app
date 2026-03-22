@@ -10,3 +10,13 @@ body {
     color-scheme: dark;
   }
 }
+
+@media print {
+  @page {
+    margin: 0;
+  }
+
+  body {
+    padding: 0.5in;
+  }
+}

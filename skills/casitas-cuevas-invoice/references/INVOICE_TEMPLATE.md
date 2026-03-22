@@ -9,10 +9,11 @@ This document defines the structure, behavior, data, and visual layout of the in
 ```
 Business Name : Casitas Cuevas
 Address       : Atlanta, GA 30338
-Phone         : (XXX) XXX-XXXX
+Phone         : (678) 592-2547
 ```
 
 ---
+
 
 ## Visual Layout
 
@@ -20,7 +21,7 @@ Phone         : (XXX) XXX-XXXX
 ┌─────────────────────────────────────────────────────────────────┐
 │  INVOICE                          Casitas Cuevas                │
 │                                   Atlanta, GA 30338             │
-│                                   (XXX) XXX-XXXX                │
+│                                   (678) 592-2547                │
 ├─────────────────────────────────────────────────────────────────┤
 │  Bill To:                         Invoice #: 0001               │
 │  [Restaurant / Business Name]     Date: 03/22/2026              │
@@ -38,7 +39,7 @@ Phone         : (XXX) XXX-XXXX
 │                                     Total:     │   $188.00     │
 ├─────────────────────────────────────────────────────────────────┤
 │  If you have any questions about this invoice,                  │
-│  please contact (XXX) XXX-XXXX                                  │
+│  please contact (678) 592-2547                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -52,7 +53,7 @@ Phone         : (XXX) XXX-XXXX
 | Title | "Invoice" | No |
 | Business Name | "Casitas Cuevas" | No |
 | Address | "Atlanta, GA 30338" | No |
-| Phone | "(XXX) XXX-XXXX" | No |
+| Phone | "(678) 592-2547" | No |
 
 ### 2. Bill To + Invoice Meta (second row, two columns)
 **Left column — Bill To:**
@@ -107,7 +108,7 @@ Preset data:
 | Total | calculated, read-only | Subtotal + Tax amount |
 
 ### 5. Footer
-- Static text: `"If you have any questions about this invoice, please contact (XXX) XXX-XXXX"`
+- Static text: `"If you have any questions about this invoice, please contact (678) 592-2547"`
 - Always shown, not editable by user
 
 ---
@@ -138,7 +139,7 @@ Preset data:
 ```
 Invoice                              Casitas Cuevas
                                      Atlanta, GA 30338
-                                     (XXX) XXX-XXXX
+                                     (678) 592-2547
 
 Bill To:                             Invoice #: 0003
 El Ranchero Restaurant               Date: 03/22/2026
@@ -155,7 +156,7 @@ Tres Leches         2      $48.00        $96.00
                            Total:        $330.00
 
 If you have any questions about this invoice,
-please contact (XXX) XXX-XXXX
+please contact (678) 592-2547
 ```
 
 ---
