@@ -13,9 +13,7 @@ export interface Invoice {
   date: string;
   terms: string;
   items: InvoiceItem[];
-  taxPercent: number;
   subtotal: number;
-  taxAmount: number;
   total: number;
   createdAt: string;
 }
@@ -27,5 +25,4 @@ export interface InvoiceFormValues {
   date: string;
   terms: string;
   items: InvoiceItem[];
-  taxPercent: number;
 }

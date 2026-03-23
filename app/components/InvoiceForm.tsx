@@ -40,21 +40,16 @@ export function InvoiceForm({ invoiceNumber, onSave }: Props) {
       date: todayISO(),
       terms: "Due upon receipt",
       items: [{ product: "", qty: 1, unitPrice: 0 }],
-      taxPercent: 0,
     },
   });
 
   const { fields, append, remove } = useFieldArray({ control, name: "items" });
   const items = useWatch({ control, name: "items" });
-  const taxPercent = useWatch({ control, name: "taxPercent" });
   const dateValue = useWatch({ control, name: "date" });
 
-  const subtotal = items.reduce((sum, item) => {
+  const total = items.reduce((sum, item) => {
     return sum + (Number(item.qty) || 0) * (Number(item.unitPrice) || 0);
   }, 0);
-
-  const taxAmount = subtotal * ((Number(taxPercent) || 0) / 100);
-  const total = subtotal + taxAmount;
 
   return (
     <div>
@@ -253,32 +248,7 @@ export function InvoiceForm({ invoiceNumber, onSave }: Props) {
 
         {/* Totals */}
         <div className="flex justify-end mb-10">
-          <div className="w-64 space-y-2 text-sm">
-            <div className="flex justify-between">
-              <span className="text-slate-500">Subtotal</span>
-              <span className="font-medium text-slate-900">
-                {currency(subtotal)}
-              </span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-slate-500">Tax (%)</span>
-              <input
-                {...register("taxPercent", { valueAsNumber: true })}
-                type="number"
-                min="0"
-                step="0.01"
-                placeholder="0"
-                className={`${inputInline} w-20 text-right`}
-              />
-            </div>
-            {taxAmount > 0 && (
-              <div className="flex justify-between">
-                <span className="text-slate-500">Tax Amount</span>
-                <span className="font-medium text-slate-900">
-                  {currency(taxAmount)}
-                </span>
-              </div>
-            )}
+          <div className="w-64 text-sm">
             <div className="flex justify-between border-t border-slate-200 pt-3">
               <span className="font-semibold text-slate-900">Total</span>
               <span className="font-semibold text-slate-900">

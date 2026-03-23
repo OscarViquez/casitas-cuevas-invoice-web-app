@@ -18,18 +18,16 @@ export default function NewInvoice({ loaderData }: Route.ComponentProps) {
   const navigate = useNavigate();
 
   async function handleSave(values: InvoiceFormValues) {
-    const subtotal = values.items.reduce(
+    const total = values.items.reduce(
       (sum, item) => sum + item.qty * item.unitPrice,
       0
     );
-    const taxAmount = subtotal * ((values.taxPercent || 0) / 100);
 
     await saveInvoice({
       ...values,
       invoiceNumber,
-      subtotal,
-      taxAmount,
-      total: subtotal + taxAmount,
+      subtotal: total,
+      total,
       createdAt: new Date().toISOString(),
     });
 
