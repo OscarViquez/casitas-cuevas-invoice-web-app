@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { InvoiceForm } from "~/components/InvoiceForm";
+import { InvoiceForm } from "~/components/invoice/InvoiceForm";
 import { getNextInvoiceNumber, saveInvoice } from "~/lib/db";
 import type { InvoiceFormValues } from "~/lib/types";
 import type { Route } from "./+types/invoice.new";
@@ -34,11 +34,5 @@ export default function NewInvoice({ loaderData }: Route.ComponentProps) {
     navigate("/");
   }
 
-  return (
-    <div className="min-h-screen print:min-h-0 bg-slate-50 print:bg-white py-8 print:py-0 px-4 print:px-0">
-      <div className="max-w-4xl mx-auto">
-        <InvoiceForm invoiceNumber={invoiceNumber} onSave={handleSave} />
-      </div>
-    </div>
-  );
+  return <InvoiceForm invoiceNumber={invoiceNumber} onSave={handleSave} />;
 }
