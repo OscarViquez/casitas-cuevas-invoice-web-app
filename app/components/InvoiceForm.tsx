@@ -65,7 +65,11 @@ export function InvoiceForm({ invoiceNumber, onSave }: Props) {
                 key={preset.name}
                 type="button"
                 onClick={() =>
-                  append({ product: preset.name, qty: 1, unitPrice: preset.price })
+                  append({
+                    product: preset.name,
+                    qty: 1,
+                    unitPrice: preset.price,
+                  })
                 }
                 className="h-9 px-4 text-sm font-medium rounded-md border border-slate-200 text-slate-700 hover:bg-slate-50 transition-colors"
               >
@@ -136,14 +140,7 @@ export function InvoiceForm({ invoiceNumber, onSave }: Props) {
 
             {/* Invoice Meta */}
             <div className="text-sm space-y-3 min-w-52">
-              <div className="flex justify-between items-center gap-6">
-                <span className="text-slate-500 whitespace-nowrap">
-                  Invoice #
-                </span>
-                <span className="font-semibold text-slate-900">
-                  {invoiceNumber}
-                </span>
-              </div>
+              <div className="flex justify-between items-center gap-6"></div>
               <div className="flex justify-between items-center gap-6">
                 <span className="text-slate-500">Date</span>
                 <div>
