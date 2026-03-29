@@ -204,15 +204,23 @@ export function InvoiceForm({ invoiceNumber, onSave }: Props) {
                       />
                     </td>
                     <td className="py-2 px-2">
-                      <input
-                        {...register(`items.${index}.unitPrice`, {
-                          valueAsNumber: true,
-                        })}
-                        type="number"
-                        min="0"
-                        step="0.01"
-                        className={`${inputInline} w-full text-right`}
-                      />
+                      <div className="relative">
+                        <span className="absolute left-2 top-1/2 -translate-y-1/2 text-sm text-slate-500 print:hidden">
+                          $
+                        </span>
+                        <input
+                          {...register(`items.${index}.unitPrice`, {
+                            valueAsNumber: true,
+                          })}
+                          type="number"
+                          min="0"
+                          step="0.01"
+                          className={`${inputInline} w-full text-right print:hidden`}
+                        />
+                        <span className="hidden print:block text-right font-medium text-slate-900">
+                          {currency(unitPrice)}
+                        </span>
+                      </div>
                     </td>
                     <td className="py-2 pl-2 text-right font-medium text-slate-900 whitespace-nowrap">
                       {currency(lineTotal)}
