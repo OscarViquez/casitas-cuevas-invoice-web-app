@@ -1,5 +1,5 @@
 export const BUSINESS = {
-  name: "Casitas Cuevas",
+  name: "Casitas Cuevas Bakery",
   address: "Atlanta, GA 30338",
   phone: "(678) 592-2547",
 } as const;
