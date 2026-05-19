@@ -9,7 +9,7 @@ interface CasitasDB extends DBSchema {
 }
 
 function getDB() {
-  return openDB<CasitasDB>("casitas-cuevas", 1, {
+  return openDB<CasitasDB>("casitas-cuevas-bakery", 1, {
     upgrade(db) {
       db.createObjectStore("invoices", { keyPath: "id", autoIncrement: true });
     },

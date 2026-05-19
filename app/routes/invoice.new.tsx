@@ -5,7 +5,7 @@ import type { InvoiceFormValues } from "~/lib/types";
 import type { Route } from "./+types/invoice.new";
 
 export function meta() {
-  return [{ title: "New Invoice — Casitas Cuevas" }];
+  return [{ title: "New Invoice — Casitas Cuevas Bakery" }];
 }
 
 export async function clientLoader() {
